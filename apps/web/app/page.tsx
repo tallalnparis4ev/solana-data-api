@@ -7,9 +7,7 @@ export default function Home() {
   const [result, setResult] = useState<any>(null)
 
   const fetchCount = async () => {
-    const res = await fetch(
-      `https://orange-space-winner-64wgxw6w5p4frrp4-3000.app.github.dev/solana/transaction-count?block=${block}`
-);
+    const res = await fetch(`/api/solana/transaction-count?block=${block}`);
     const data = await res.json()
     setResult(data)
   }
